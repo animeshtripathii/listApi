@@ -6,6 +6,7 @@ export const listProductsService = async (page, limit) => {
 
   // 2. Fetch the specific chunk of products
   const products = await Product.find()
+       .sort({_id: -1}) // Optional: Sort by newest first
       .skip(skip)
       .limit(limit);
 
